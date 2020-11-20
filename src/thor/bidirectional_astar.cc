@@ -641,7 +641,7 @@ BidirectionalAStar::GetBestPath(valhalla::Location& origin,
 
       // Prune path if predecessor is not a through edge or if the maximum
       // number of upward transitions has been exceeded on this hierarchy level.
-      if ((fwd_pred.not_thru() && fwd_pred.not_thru_pruning()) ||
+      if ((fwd_pred.not_thru() && fwd_pred.not_thru_pruning() && !fwd_pred.deadend()) ||
           hierarchy_limits_forward_[fwd_pred.endnode().level()].StopExpanding()) {
         continue;
       }
@@ -663,7 +663,7 @@ BidirectionalAStar::GetBestPath(valhalla::Location& origin,
       }
 
       // Prune path if predecessor is not a through edge
-      if ((rev_pred.not_thru() && rev_pred.not_thru_pruning()) ||
+      if ((rev_pred.not_thru() && rev_pred.not_thru_pruning() && !rev_pred.deadend()) ||
           hierarchy_limits_reverse_[rev_pred.endnode().level()].StopExpanding()) {
         continue;
       }
