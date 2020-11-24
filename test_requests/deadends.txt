@@ -1,0 +1,1 @@
+-j '{"locations":[{"lat":1.353052,"lon":103.960729,"radius":0},{"lat":1.352935,"lon":103.960815,"type":"break_through","radius":0},{"lat":1.353064,"lon":103.960613,"radius":0}],"costing":"auto","units":"miles"}'
