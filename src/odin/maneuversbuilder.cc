@@ -3036,8 +3036,7 @@ void ManeuversBuilder::ProcessGuidanceViewSignBoards(Maneuver& maneuver) {
       // Process overlay guidance view signboards
       for (const auto& base_guidance_view_signboard : curr_edge->sign().guidance_view_signboards()) {
 
-        std::cout << "**************ProcessGuidanceViewSignboards :: "
-                  << base_guidance_view_signboard.SerializeAsString() << std::endl;
+        std::cout << "**************ProcessGuidanceViewSignboards :: " << base_guidance_view_signboard.text() << std::endl;
 
         auto base_tokens = split(base_guidance_view_signboard.text(), ';');
         // If base(is_route_number) guidance view board and a pair...
